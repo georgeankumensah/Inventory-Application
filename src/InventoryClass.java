@@ -23,13 +23,13 @@ public class InventoryClass extends JFrame implements ActionListener {
         //sidebar
         sidebar = new JPanel();
         sidebar.setBackground(new Color(0x2B4461));
-        sidebar.setBounds(0, 0, 300, 982);
+        sidebar.setPreferredSize(new Dimension(300, 982));
         sidebar.setLayout(null);
 
         //line on sidebar
         line = new JSeparator();
         line.setBackground(new Color(0xFFFFFF));
-        line.setBounds(0, 109, 300, 2);
+        line.setBounds(0,109, 300, 2);
 
         //Inventory : text on sidebar
         head = new JLabel();
@@ -101,18 +101,18 @@ public class InventoryClass extends JFrame implements ActionListener {
         //Body : container for other components
         body = new JPanel();
         body.setBackground(new Color(0xF6F6F6));
-        body.setBounds(300, 0, 1212, 982);
+        body.setPreferredSize(new Dimension( 1212, 982));
         body.setLayout(null);
 
         //entire app
         this.setTitle("Inventory");
-        this.setLayout(null);
+        this.setLayout(new BorderLayout());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(420,420);
         this.setVisible(true);
         this.getContentPane().setBackground(Color.white);
-        this.add(sidebar);
-        this.add(body);
+        this.add(sidebar, BorderLayout.WEST);
+        this.add(body, BorderLayout.EAST);
         sidebar.add(head);
         sidebar.add(goods);
         sidebar.add(issued);
